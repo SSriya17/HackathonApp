@@ -1,4 +1,7 @@
-# BridgeLens - Ultra-Modern Frontend
+# BridgeLens 
+
+## 🚀 Live App
+Check it out here: [BridgeLens App](https://bridgelens.streamlit.app/)
 
 An ultra-modern, visually impressive React frontend featuring a custom animated cursor and cutting-edge UI design. Built with React, Vite, Framer Motion, and Tailwind CSS.
 
@@ -168,9 +171,6 @@ To make elements interactive with the custom cursor:
 
 This project is open source and available for use in your projects.
 
-## 🤝 Contributing
-
-Feel free to fork, modify, and use this codebase for your projects!
 
 ---
 
