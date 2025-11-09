@@ -1,0 +1,43 @@
+# Python Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+pyvenv.cfg
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+.env.local
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data files (if large, consider using Git LFS)
+# Uncomment if you don't want to upload CSV files
+# *.csv
+
+# Logs
+*.log
+

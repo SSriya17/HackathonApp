@@ -1,0 +1,81 @@
+================================================================================
+QUICK START GUIDE - What to Do Next
+================================================================================
+
+STEP 1: Copy the Backend Folder
+---------------------------------
+Copy the entire 'backend' folder from:
+  /Users/sreya/Downloads/backend/
+  
+To your HackathonApp-main project:
+  /Users/sreya/Desktop/HackathonApp-main/backend/
+
+You can do this by:
+- Drag and drop the folder in Finder
+- Or use terminal: cp -r /Users/sreya/Downloads/backend /Users/sreya/Desktop/HackathonApp-main/
+
+
+STEP 2: Install Dependencies
+-----------------------------
+Open terminal in your HackathonApp-main folder and run:
+
+  cd /Users/sreya/Desktop/HackathonApp-main
+  pip install -r backend/requirements.txt
+
+Or install manually:
+  pip install pandas numpy streamlit plotly
+
+
+STEP 3: Create Your Streamlit App
+-----------------------------------
+Option A: Use the provided app.py
+  - Copy app.py from /Users/sreya/Downloads/backend/app.py
+  - Paste it in /Users/sreya/Desktop/HackathonApp-main/app.py
+
+Option B: Create your own app.py
+  - Create a new file called app.py
+  - Import the backend: from backend.backend import ComplaintBackend
+  - Use the example code from example_usage.py or README.md
+
+
+STEP 4: Run Your App
+---------------------
+In terminal, run:
+
+  streamlit run app.py
+
+Your dashboard will open in your browser!
+
+
+================================================================================
+MINIMAL EXAMPLE (Copy this to app.py if you want a simple version)
+================================================================================
+
+import streamlit as st
+import pandas as pd
+from backend.backend import ComplaintBackend
+
+st.title("Telecom Complaints Dashboard")
+
+@st.cache_data
+def load_data():
+    backend = ComplaintBackend()
+    backend.load_data(['data/dataset1.csv', 'data/dataset2.csv'])
+    backend.process_data()
+    return backend
+
+backend = load_data()
+
+# Bar chart
+chart_data = backend.get_chart_data()
+chart_df = pd.DataFrame({
+    'Category': chart_data['categories'],
+    'Count': chart_data['counts']
+})
+st.bar_chart(chart_df.set_index('Category'))
+
+# Priority ranking
+st.dataframe(backend.get_priority_ranking())
+
+================================================================================
+
